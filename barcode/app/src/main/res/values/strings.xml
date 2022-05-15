@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">BARcode</string>
+    <string name="continue_as_bar">NASTAVI KAO KAFIĆ</string>
+    <string name="continue_as_guest">NASTAVI KAO GOST</string>
+    <string name="e_mail">e-mail</string>
+    <string name="password">password</string>
+    <string name="login">login</string>
+    <string name="barcode">BARcode</string>
 </resources>
