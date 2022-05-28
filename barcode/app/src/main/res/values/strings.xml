@@ -12,4 +12,8 @@
     <string name="item_name">IME ARTIKLA</string>
     <string name="_0">0</string>
     <string name="plus">+</string>
+    <string name="change_pass">promjeni lozinku</string>
+    <string name="new_password">new Password</string>
+    <string name="price_example">16,99kn</string>
+    <string name="order_confirm">Jeste li sigurni da želite naručiti?</string>
 </resources>

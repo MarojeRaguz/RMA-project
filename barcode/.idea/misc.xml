@@ -7,12 +7,18 @@
         <entry key="..\:/Users/maroj/RMA-project/barcode/app/src/main/res/drawable/rounded_button.xml" value="0.2995" />
         <entry key="..\:/Users/maroj/RMA-project/barcode/app/src/main/res/drawable/rounded_edittext.xml" value="0.295" />
         <entry key="..\:/Users/maroj/RMA-project/barcode/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/maroj/RMA-project/barcode/app/src/main/res/layout/dialog_confirm_order.xml" value="0.25" />
         <entry key="..\:/Users/maroj/RMA-project/barcode/app/src/main/res/layout/fragment_bars_list.xml" value="0.3130034522439586" />
         <entry key="..\:/Users/maroj/RMA-project/barcode/app/src/main/res/layout/fragment_login.xml" value="0.35280797101449274" />
-        <entry key="..\:/Users/maroj/RMA-project/barcode/app/src/main/res/layout/fragment_orders_list.xml" value="0.35280797101449274" />
+        <entry key="..\:/Users/maroj/RMA-project/barcode/app/src/main/res/layout/fragment_new_password.xml" value="0.25" />
+        <entry key="..\:/Users/maroj/RMA-project/barcode/app/src/main/res/layout/fragment_orders_list.xml" value="0.25" />
+        <entry key="..\:/Users/maroj/RMA-project/barcode/app/src/main/res/layout/fragment_restaurant_home.xml" value="0.25" />
+        <entry key="..\:/Users/maroj/RMA-project/barcode/app/src/main/res/layout/fragment_restaurant_view_order.xml" value="0.3009833262077811" />
         <entry key="..\:/Users/maroj/RMA-project/barcode/app/src/main/res/layout/fragment_welcome_screen.xml" value="0.358695652173913" />
         <entry key="..\:/Users/maroj/RMA-project/barcode/app/src/main/res/layout/item_bar.xml" value="0.35280797101449274" />
+        <entry key="..\:/Users/maroj/RMA-project/barcode/app/src/main/res/layout/item_order.xml" value="0.3009833262077811" />
         <entry key="..\:/Users/maroj/RMA-project/barcode/app/src/main/res/layout/item_order_item.xml" value="0.5" />
+        <entry key="..\:/Users/maroj/RMA-project/barcode/app/src/main/res/layout/item_ordered_item.xml" value="0.3009833262077811" />
       </map>
     </option>
   </component>
