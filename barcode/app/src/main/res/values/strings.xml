@@ -6,4 +6,10 @@
     <string name="password">password</string>
     <string name="login">login</string>
     <string name="barcode">BARcode</string>
+    <string name="bar_name">IME BARA</string>
+    <string name="order">naruči</string>
+    <string name="ukupno_200kn">UKUPNO: 200kn</string>
+    <string name="item_name">IME ARTIKLA</string>
+    <string name="_0">0</string>
+    <string name="plus">+</string>
 </resources>
