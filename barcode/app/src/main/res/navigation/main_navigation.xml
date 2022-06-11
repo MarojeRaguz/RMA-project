@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/welcomeScreenFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.barcode.ui.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login"/>
+    <fragment
+        android:id="@+id/barsListFragment"
+        android:name="com.example.barcode.ui.bars_list.BarsListFragment"
+        android:label="BarsListFragment"
+        tools:layout="@layout/fragment_bars_list"/>
+    <fragment
+        android:id="@+id/welcomeScreenFragment"
+        android:name="com.example.barcode.ui.welcome_screen.WelcomeScreenFragment"
+        android:label="WelcomeScreenFragment"
+        tools:layout="@layout/fragment_welcome_screen">
+        <action
+            android:id="@+id/action_welcomeScreenFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_welcomeScreenFragment_to_barsListFragment"
+            app:destination="@id/barsListFragment" />
+    </fragment>
+</navigation>

@@ -17,7 +17,7 @@
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/navDrawer"
+                android:src="@drawable/nav_drawer"
                 android:adjustViewBounds="true"
                 android:scaleType="centerInside"/>
             <TextView
