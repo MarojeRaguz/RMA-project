@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "846854568204",
+    "project_id": "rma-project-8cabf",
+    "storage_bucket": "rma-project-8cabf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:846854568204:android:34ae733cc27400d7bd3129",
+        "android_client_info": {
+          "package_name": "com.example.barcode"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "846854568204-43hi8bf1m5e4omlmnovpg6gti4pr6f4l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZectPFl35PmoFgog03bizJtnrQjHdyiA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "846854568204-43hi8bf1m5e4omlmnovpg6gti4pr6f4l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

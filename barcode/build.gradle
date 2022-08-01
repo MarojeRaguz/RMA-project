@@ -19,6 +19,7 @@ buildscript {
 
     dependencies {
         classpath navigation_safe_args_gradle_plugin
+        classpath 'com.google.gms:google-services:4.3.10'
     }
 }
 plugins {

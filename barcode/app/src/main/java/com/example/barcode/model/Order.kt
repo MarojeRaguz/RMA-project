@@ -1,6 +1,6 @@
 package com.example.barcode.model
 
-class Order {
+
 
     data class Order(
         var id: Long,
@@ -12,4 +12,3 @@ class Order {
     ){
 
     }
-}
