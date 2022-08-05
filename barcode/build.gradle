@@ -3,6 +3,7 @@
 buildscript {
     repositories {
         google()
+        maven { url 'https://jitpack.io' }
     }
 
     ext{
@@ -19,7 +20,7 @@ buildscript {
 
     dependencies {
         classpath navigation_safe_args_gradle_plugin
-        classpath 'com.google.gms:google-services:4.3.10'
+        classpath 'com.google.gms:google-services:4.3.13'
     }
 }
 plugins {

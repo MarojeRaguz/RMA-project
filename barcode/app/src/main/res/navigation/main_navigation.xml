@@ -14,7 +14,11 @@
         android:id="@+id/barsListFragment"
         android:name="com.example.barcode.ui.bars_list.BarsListFragment"
         android:label="BarsListFragment"
-        tools:layout="@layout/fragment_bars_list"/>
+        tools:layout="@layout/fragment_bars_list">
+        <action
+            android:id="@+id/action_barsListFragment_to_scanFragment"
+            app:destination="@id/scanFragment" />
+    </fragment>
     <fragment
         android:id="@+id/welcomeScreenFragment"
         android:name="com.example.barcode.ui.welcome_screen.WelcomeScreenFragment"
@@ -27,4 +31,9 @@
             android:id="@+id/action_welcomeScreenFragment_to_barsListFragment"
             app:destination="@id/barsListFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/scanFragment"
+        android:name="com.example.barcode.ui.bars_list.ScanFragment"
+        android:label="ScanFragment"
+        tools:layout="@layout/fragment_scan"/>
 </navigation>
