@@ -10,6 +10,7 @@
         android:layout_marginHorizontal="10dp"
         >
         <TextView
+            android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:fontFamily="sans-serif-black"
@@ -24,6 +25,7 @@
             android:layout_weight="0.5"
             >
             <TextView
+                android:id="@+id/tv_price"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="@string/price_example"
@@ -32,6 +34,7 @@
                 android:gravity="center"
                 />
             <TextView
+                android:id="@+id/tv_count"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="2x"
@@ -40,6 +43,7 @@
                 android:gravity="center"
                 />
             <TextView
+                android:id="@+id/tv_item_total"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="33kn"
@@ -48,10 +52,6 @@
                 android:gravity="center"
                 />
         </LinearLayout>
-
-
-
-
     </LinearLayout>
 
 
