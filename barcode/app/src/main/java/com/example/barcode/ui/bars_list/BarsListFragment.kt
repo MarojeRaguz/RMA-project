@@ -1,7 +1,9 @@
 package com.example.barcode.ui.bars_list
 
 
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +13,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.barcode.data.BarRepository
 import com.example.barcode.data.BarRepositoryImpl
 import com.example.barcode.databinding.FragmentBarsListBinding
+import com.example.barcode.model.Bar
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 
 
 class BarsListFragment: Fragment() {
@@ -46,8 +51,7 @@ class BarsListFragment: Fragment() {
     }
 
     private fun updateData() {
-        val bars = barRepository.getAllBars()
-        adapter.setBars(bars)
+        adapter.setBars(barRepository.getAllBars())
     }
 
     private fun showScanFragment() {

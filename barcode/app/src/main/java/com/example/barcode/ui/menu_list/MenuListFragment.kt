@@ -1,22 +1,44 @@
 package com.example.barcode.ui.menu_list
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import com.example.barcode.databinding.FragmentMenuListBinding
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.barcode.data.BarRepository
+import com.example.barcode.data.BarRepositoryImpl
+import com.example.barcode.databinding.ActivityMenuListBinding
 
-class MenuListFragment : Fragment() {
 
-    private lateinit var binding: FragmentMenuListBinding
+class MenuListActivity : AppCompatActivity() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentMenuListBinding.inflate(layoutInflater)
-        return binding.root
+    private lateinit var binding: ActivityMenuListBinding
+    private lateinit var adapter: MenuAdapter
+    var barRepository: BarRepository = BarRepositoryImpl()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityMenuListBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        setupRecyclerView()
     }
+
+    private fun setupRecyclerView() {
+        binding.rvMenuList.layoutManager = LinearLayoutManager(
+            this,LinearLayoutManager.VERTICAL,false
+        )
+        adapter = MenuAdapter()
+        binding.rvMenuList.adapter = adapter
+    }
+
+    override fun onResume() {
+        super.onResume()
+        updateData()
+    }
+
+    private fun updateData() {
+        var barId = intent.getStringExtra("barId")
+        if (barId != null)
+        adapter.setArticles(barRepository.getBarsArticle(barId))
+    }
+
+
 }

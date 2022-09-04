@@ -18,7 +18,6 @@ class BarAdapter:RecyclerView.Adapter<BarViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BarViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_bar,parent,false)
-        Log.i(TAG,"setingview")
         return BarViewHolder(view)
     }
     fun setBars(bars: List<Bar>) {

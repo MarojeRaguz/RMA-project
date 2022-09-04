@@ -24,6 +24,8 @@
         </activity>
         <activity android:name=".ui.restaurant_home.RestaurantHomeActivity">
         </activity>
+        <activity android:name=".ui.menu_list.MenuListActivity">
+        </activity>
     </application>
 
 </manifest>
