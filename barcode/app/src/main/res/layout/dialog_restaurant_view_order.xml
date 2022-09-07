@@ -12,7 +12,6 @@
         android:layout_marginHorizontal="10dp"
         android:orientation="vertical"
         >
-
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="300dp"

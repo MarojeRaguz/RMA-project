@@ -1,18 +1,23 @@
 package com.example.barcode.ui.restaurant_home
 
-import android.app.Activity
 import android.os.Bundle
-import com.example.barcode.databinding.ActivityBarBinding
-import com.example.barcode.databinding.ActivityMainBinding
+import androidx.appcompat.app.AppCompatActivity
+import com.example.barcode.databinding.ActivityRestaurantHomeBinding
 
-class RestaurantHomeActivity: Activity() {
+class RestaurantHomeActivity: AppCompatActivity() {
 
-    lateinit var binding: ActivityBarBinding
+    lateinit var binding: ActivityRestaurantHomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityBarBinding.inflate(layoutInflater)
+        binding = ActivityRestaurantHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val viewPager = binding.viewPager
+        viewPager.adapter = ViewPagerAdapter(supportFragmentManager)
+
+        val indicator = binding.circleIndicator
+        indicator.setViewPager(viewPager)
     }
 }
