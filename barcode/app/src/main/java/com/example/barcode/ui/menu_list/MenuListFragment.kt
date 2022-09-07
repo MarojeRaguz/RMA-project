@@ -1,6 +1,5 @@
 package com.example.barcode.ui.menu_list
 
-import android.content.ContentValues
 import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
@@ -10,7 +9,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.barcode.data.BarRepository
 import com.example.barcode.data.BarRepositoryImpl
 import com.example.barcode.databinding.ActivityMenuListBinding
-import kotlin.math.log
 
 
 class MenuListActivity : AppCompatActivity() {
@@ -49,8 +47,7 @@ class MenuListActivity : AppCompatActivity() {
 
 
     private fun orderDialogOpen() {
-
-        var dialog = ConfirmOrderDialog()
+        var dialog = ConfirmOrderDialog(intent.getStringExtra("tableNumber")!!.toInt(),intent.getStringExtra("barId").toString())
         var articles = adapter.getArticles()
         if(!articles.isNullOrEmpty()){
             dialog.setArticles(adapter.getArticles())
