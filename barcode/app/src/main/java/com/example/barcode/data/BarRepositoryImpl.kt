@@ -27,7 +27,7 @@ class BarRepositoryImpl: BarRepository {
                         bars.add(bar)
                     }
                 }
-                val sharedPreferences : SharedPreferences = context.getSharedPreferences("bars",Context.MODE_PRIVATE)
+                val sharedPreferences : SharedPreferences = context.getSharedPreferences("barCode",Context.MODE_PRIVATE)
                 val editor = sharedPreferences.edit()
                 var gson = Gson()
                 var json = gson.toJson(bars)
@@ -48,14 +48,19 @@ class BarRepositoryImpl: BarRepository {
         var bar =  bars.find { it.id == barId }
         return bar?.articles ?: emptyList()
     }
-    override fun getBar(barId: String): Bar {
+    override fun getBarByBarId(barId: String): Bar {
         var bars = this.getAllBars()
         return bars.find { it.id == barId } ?: error("not found")
-
     }
+
+    override fun getBarByBarEmail(email: String): Bar {
+        var bars = this.getAllBars()
+        return bars.find { it.email == email } ?: error("not found")
+    }
+
     private fun getBarsFromSharedPreferences():List<Bar>{
         var context = Barcode.application
-        val sharedPreference =  context.getSharedPreferences("bars", Context.MODE_PRIVATE)
+        val sharedPreference =  context.getSharedPreferences("barCode", Context.MODE_PRIVATE)
         return if(sharedPreference != null){
             var gson = Gson()
             var barJson=sharedPreference.getString("barsList","")

@@ -5,12 +5,12 @@ package com.example.barcode.model
     }
 
     data class Order(
-        var id: String,
-        var bar_id:String,
-        var table: Int,
-        var articles: List<Article>,
-        var orderTime: String,
-        var status: OrderStatus
+        var id: String="",
+        var bar_id:String="",
+        var table: Int = 0,
+        var articles: List<Article> = listOf(),
+        var orderTime: String = "",
+        var status: OrderStatus = OrderStatus.ORDERED
     ){
 
     }

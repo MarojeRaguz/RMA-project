@@ -9,6 +9,7 @@ import java.util.function.LongFunction
 interface BarRepository {
     fun getAllBars():List<Bar>
     fun getBarsArticle(barId: String): List<Article>
-    fun getBar(barId: String): Bar
+    fun getBarByBarId(barId: String): Bar
+    fun getBarByBarEmail(email: String):Bar
     fun saveBarsToSharedPreferences()
 }

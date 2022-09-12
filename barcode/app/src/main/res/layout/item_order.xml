@@ -10,6 +10,7 @@
         android:layout_marginHorizontal="10dp"
         >
         <TextView
+            android:id="@+id/tv_order_id"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:fontFamily="sans-serif-black"
@@ -20,6 +21,7 @@
 
             />
         <TextView
+            android:id="@+id/tv_table"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:fontFamily="sans-serif-black"
@@ -29,6 +31,7 @@
             android:layout_weight="0.33"
             />
         <TextView
+            android:id="@+id/tv_total"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:fontFamily="sans-serif-black"

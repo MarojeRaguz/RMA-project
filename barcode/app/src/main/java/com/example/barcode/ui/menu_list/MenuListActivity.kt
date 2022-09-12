@@ -10,7 +10,6 @@ import com.example.barcode.data.BarRepository
 import com.example.barcode.data.BarRepositoryImpl
 import com.example.barcode.databinding.ActivityMenuListBinding
 
-
 class MenuListActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMenuListBinding
@@ -45,7 +44,6 @@ class MenuListActivity : AppCompatActivity() {
         }
     }
 
-
     private fun orderDialogOpen() {
         var dialog = ConfirmOrderDialog(intent.getStringExtra("tableNumber")!!.toInt(),intent.getStringExtra("barId").toString())
         var articles = adapter.getArticles()
@@ -58,6 +56,4 @@ class MenuListActivity : AppCompatActivity() {
         }
         Log.d(TAG,adapter.getArticles().toString())
     }
-
-
 }

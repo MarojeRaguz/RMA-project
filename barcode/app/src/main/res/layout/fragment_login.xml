@@ -30,7 +30,8 @@
             android:layout_marginHorizontal="50dp"
             android:layout_marginBottom="30dp"
             android:hint="@string/e_mail"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
         <EditText
             android:id="@+id/et_password"
             android:layout_width="match_parent"
@@ -40,7 +41,8 @@
             android:layout_marginHorizontal="50dp"
             android:layout_marginBottom="30dp"
             android:hint="@string/password"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
         <Button
             android:id="@+id/btn_login"
             android:layout_width="match_parent"
