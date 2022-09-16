@@ -15,6 +15,7 @@ import com.squareup.picasso.Picasso
 class BarAdapter:RecyclerView.Adapter<BarViewHolder>() {
 
     private val bars = mutableListOf<Bar>()
+    var onBarEventListener: OnBarEventListener? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BarViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_bar,parent,false)
@@ -28,6 +29,9 @@ class BarAdapter:RecyclerView.Adapter<BarViewHolder>() {
     override fun onBindViewHolder(holder: BarViewHolder, position: Int) {
         val bar = bars[position]
         holder.bind(bar)
+        onBarEventListener?.let { listener ->
+            holder.itemView.setOnClickListener { listener.onBarSelected(bar) }
+        }
     }
 
     override fun getItemCount(): Int {

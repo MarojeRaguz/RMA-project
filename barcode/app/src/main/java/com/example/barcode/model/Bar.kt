@@ -5,8 +5,7 @@ package com.example.barcode.model
         var name: String="name",
         var email: String="email",
         var imageUrl:String="imageUrl",
-        var lat: Int=2,
-        var lang: Int=2,
+        var address: String="",
         var articles: List<Article> = listOf()
     ){
 

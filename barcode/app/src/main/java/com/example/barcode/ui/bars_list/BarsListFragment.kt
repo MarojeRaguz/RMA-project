@@ -2,6 +2,8 @@ package com.example.barcode.ui.bars_list
 
 
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -18,7 +20,7 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
 
-class BarsListFragment: Fragment() {
+class BarsListFragment: Fragment(),OnBarEventListener {
 
     private lateinit var binding: FragmentBarsListBinding
     private lateinit var adapter: BarAdapter
@@ -42,7 +44,9 @@ class BarsListFragment: Fragment() {
             false
         )
         adapter = BarAdapter()
+        adapter.onBarEventListener = this
         binding.rvBars.adapter=adapter
+
     }
 
     override fun onResume() {
@@ -57,6 +61,12 @@ class BarsListFragment: Fragment() {
     private fun showScanFragment() {
         val action = BarsListFragmentDirections.actionBarsListFragmentToScanFragment()
         findNavController().navigate(action)
+    }
+
+    override fun onBarSelected(bar: Bar) {
+        var intent = Intent(Intent.ACTION_VIEW, Uri.parse("google.navigation:&q=${bar.address}&mode=w"))
+        intent.setPackage("com.google.android.apps.maps");
+        startActivity(intent)
     }
 
 }

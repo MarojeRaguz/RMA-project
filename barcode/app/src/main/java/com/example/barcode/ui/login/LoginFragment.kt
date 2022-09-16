@@ -4,8 +4,6 @@ import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.util.Log.INFO
-import android.util.Log.WARN
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +12,6 @@ import androidx.fragment.app.Fragment
 import com.example.barcode.databinding.FragmentLoginBinding
 import com.example.barcode.ui.restaurant_home.RestaurantHomeActivity
 import com.google.firebase.auth.FirebaseAuth
-import java.util.logging.Level.INFO
 
 class LoginFragment: Fragment() {
 

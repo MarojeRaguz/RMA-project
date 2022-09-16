@@ -16,6 +16,7 @@ import com.example.barcode.data.OrderRepository
 import com.example.barcode.data.OrderRepositoryImpl
 import com.example.barcode.databinding.FragmentRestaurantHomeBinding
 import com.example.barcode.model.Order
+import com.example.barcode.ui.menu_list.ConfirmOrderDialog
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.gson.Gson
@@ -26,6 +27,7 @@ class RestaurantHomeFragment: Fragment(),OnOrderEventListener {
     private var barRepository: BarRepository = BarRepositoryImpl()
     private var user = FirebaseAuth.getInstance().currentUser
     private val ref: DatabaseReference = FirebaseDatabase.getInstance().getReference("orders")
+    private lateinit var adapter: RestaurantHomeAdapter
     private lateinit var orders: ArrayList<Order>
 
     override fun onCreateView(
@@ -35,6 +37,7 @@ class RestaurantHomeFragment: Fragment(),OnOrderEventListener {
     ): View {
         binding = FragmentRestaurantHomeBinding.inflate(layoutInflater)
         binding.rvRestaurantHome.layoutManager = LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false)
+        binding.rvRestaurantHome.adapter
         orders = arrayListOf<Order>()
         updateData()
         return binding.root
@@ -52,7 +55,9 @@ class RestaurantHomeFragment: Fragment(),OnOrderEventListener {
                         orders.add(order)
                     }
                 }
-                binding.rvRestaurantHome.adapter = RestaurantHomeAdapter(orders)
+                adapter = RestaurantHomeAdapter(orders)
+                adapter.onOrderEventListener = this@RestaurantHomeFragment
+                binding.rvRestaurantHome.adapter = adapter
             }
             override fun onCancelled(error: DatabaseError) {
                 Log.i(ContentValues.TAG, "Failed to read value.", error.toException())
@@ -61,10 +66,14 @@ class RestaurantHomeFragment: Fragment(),OnOrderEventListener {
     }
 
     override fun onOrderSelected(order: Order?) {
-        TODO("Not yet implemented")
+        var dialog = order!!.let { ViewOrderDialog(it) }
+        dialog.show(parentFragmentManager,"tag")
+        Log.i("tag","nesto")
     }
 
     override fun onOrderLongPress(order: Order?): Boolean {
-        TODO("Not yet implemented")
+        Log.i("tag","nesto")
+
+        return true
     }
 }
