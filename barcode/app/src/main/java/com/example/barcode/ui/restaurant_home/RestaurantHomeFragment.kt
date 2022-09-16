@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.barcode.data.BarRepository
 import com.example.barcode.data.BarRepositoryImpl
@@ -66,14 +67,17 @@ class RestaurantHomeFragment: Fragment(),OnOrderEventListener {
     }
 
     override fun onOrderSelected(order: Order?) {
-        var dialog = order!!.let { ViewOrderDialog(it) }
-        dialog.show(parentFragmentManager,"tag")
-        Log.i("tag","nesto")
+        if (order != null){
+            var dialog = ViewOrderDialog(order)
+            dialog.show(childFragmentManager,"view order dialog")
+
+        }else {
+            Log.d("order not found","order not found")
+        }
     }
 
     override fun onOrderLongPress(order: Order?): Boolean {
         Log.i("tag","nesto")
-
         return true
     }
 }

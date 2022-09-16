@@ -40,7 +40,7 @@ class RestaurantHomeAdapter(private val rvOrders : ArrayList<Order>): RecyclerVi
             var total = 0.0
             binding.tvOrderId.text = order.id
             binding.tvTable.text = order.table.toString()
-            order.articles.stream().forEach(Consumer { total += it.count * it.price })
+            order.articles.stream().forEach { total += it.count * it.price }
             binding.tvTotal.text = total.toString()
         }
     }

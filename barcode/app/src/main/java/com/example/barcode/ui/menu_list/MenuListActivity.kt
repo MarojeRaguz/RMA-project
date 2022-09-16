@@ -46,6 +46,7 @@ class MenuListActivity : AppCompatActivity() {
 
     private fun orderDialogOpen() {
         var dialog = ConfirmOrderDialog(intent.getStringExtra("tableNumber")!!.toInt(),intent.getStringExtra("barId").toString())
+
         var articles = adapter.getArticles()
         if(!articles.isNullOrEmpty()){
             dialog.setArticles(adapter.getArticles())
