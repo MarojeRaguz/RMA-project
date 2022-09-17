@@ -1,7 +1,7 @@
 package com.example.barcode.model
 
     enum class OrderStatus{
-        ORDERED,DELIVERED
+        ORDERED,DELIVERED,DELETED
     }
 
     data class Order(

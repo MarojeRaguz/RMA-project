@@ -7,7 +7,7 @@ import com.example.barcode.model.OrderStatus
 interface OrderRepository {
 
     fun makeOrder(articles:List<Article>, table: Int, barId: String)
-    fun changeOrderStatus(orderId:String, orderStatus: OrderStatus)
+    fun changeOrderStatus(orderId:String, order: Order)
     fun savedOrdersToSharedPreferences(email:String)
     fun getOrders():List<Order>
 }

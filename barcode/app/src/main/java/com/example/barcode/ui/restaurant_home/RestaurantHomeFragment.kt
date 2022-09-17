@@ -1,5 +1,6 @@
 package com.example.barcode.ui.restaurant_home
 
+import android.app.Dialog
 import android.content.ContentValues
 import android.content.Context
 import android.content.SharedPreferences
@@ -70,14 +71,19 @@ class RestaurantHomeFragment: Fragment(),OnOrderEventListener {
         if (order != null){
             var dialog = ViewOrderDialog(order)
             dialog.show(childFragmentManager,"view order dialog")
-
         }else {
             Log.d("order not found","order not found")
         }
     }
 
     override fun onOrderLongPress(order: Order?): Boolean {
-        Log.i("tag","nesto")
-        return true
+        if (order != null){
+            var dialog = ChangeOrderStatusDialog(order)
+            dialog.show(childFragmentManager,"change order status dialog")
+            return true
+        }else {
+            Log.d("order not found","order not found")
+            return false
+        }
     }
 }

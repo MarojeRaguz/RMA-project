@@ -25,18 +25,8 @@ class OrderRepositoryImpl: OrderRepository {
         ref.child(order.id).setValue(order)
     }
 
-    override fun changeOrderStatus(orderId:String, orderStatus: OrderStatus) {
-        ref.addValueEventListener(object: ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                for (snapshot in dataSnapshot.children){
-                    val order = snapshot.getValue(Order::class.java)
-                    order?.status = orderStatus
-                }
-            }
-            override fun onCancelled(error: DatabaseError) {
-                Log.w(ContentValues.TAG, "Failed to change order status.", error.toException())
-            }
-        })
+    override fun changeOrderStatus(orderId:String, order: Order) {
+        ref.child(orderId).setValue(order)
     }
 
     override fun savedOrdersToSharedPreferences(email: String){

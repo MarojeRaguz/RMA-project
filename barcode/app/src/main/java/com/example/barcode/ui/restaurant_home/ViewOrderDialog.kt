@@ -24,7 +24,6 @@ class ViewOrderDialog(var order: Order) : DialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        Log.i("opening dialog","stvarno")
         binding = DialogRestaurantViewOrderBinding.inflate(layoutInflater)
         binding.tvTableNumber.text = "BROJ STOLA: ${order.table}"
         var total = 0.0;
