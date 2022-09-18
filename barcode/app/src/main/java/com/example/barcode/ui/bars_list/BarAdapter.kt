@@ -1,14 +1,11 @@
 package com.example.barcode.ui.bars_list
 
-import android.content.ContentValues.TAG
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.barcode.R
 import com.example.barcode.databinding.ItemBarBinding
-import com.example.barcode.model.Article
 import com.example.barcode.model.Bar
 import com.squareup.picasso.Picasso
 

@@ -8,7 +8,6 @@ import com.example.barcode.R
 import com.example.barcode.databinding.ItemOrderBinding
 
 import com.example.barcode.model.Order
-import java.util.function.Consumer
 
 class RestaurantHomeAdapter(private val rvOrders : ArrayList<Order>): RecyclerView.Adapter<RestaurantHomeAdapter.RestaurantHomeViewHolder>() {
 
@@ -35,8 +34,8 @@ class RestaurantHomeAdapter(private val rvOrders : ArrayList<Order>): RecyclerVi
     inner class RestaurantHomeViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         fun bind(position: Int){
 
-            var binding = ItemOrderBinding.bind(itemView)
-            var order = rvOrders[position]
+            val binding = ItemOrderBinding.bind(itemView)
+            val order = rvOrders[position]
             var total = 0.0
             binding.tvOrderId.text = order.id
             binding.tvTable.text = order.table.toString()

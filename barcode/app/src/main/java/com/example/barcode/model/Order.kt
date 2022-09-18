@@ -12,5 +12,4 @@ package com.example.barcode.model
         var orderTime: String = "",
         var status: OrderStatus = OrderStatus.ORDERED
     ){
-
     }

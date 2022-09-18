@@ -37,7 +37,7 @@ class MenuAdapter: RecyclerView.Adapter<MenuAdapter.MenuViewHolder>() {
     inner class MenuViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
 
         fun bind(position: Int){
-            var article = rvArticles[position]
+            val article = rvArticles[position]
             val binding = ItemOrderItemBinding.bind(itemView)
             binding.tvArticleName.text = article.name
             binding.tvTotal.text = article.count.toString()

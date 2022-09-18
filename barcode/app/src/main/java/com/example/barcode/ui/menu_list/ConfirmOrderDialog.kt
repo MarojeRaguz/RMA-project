@@ -11,12 +11,10 @@ import com.example.barcode.data.OrderRepository
 import com.example.barcode.data.OrderRepositoryImpl
 import com.example.barcode.databinding.DialogConfirmOrderBinding
 import com.example.barcode.model.Article
-import java.util.function.Consumer
-
 
 class ConfirmOrderDialog(
-    var table: Int,
-    var barId: String
+    private var table: Int,
+    private var barId: String
 ): DialogFragment() {
 
     private lateinit var binding: DialogConfirmOrderBinding
@@ -29,7 +27,7 @@ class ConfirmOrderDialog(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         super.onCreateView(inflater, container, savedInstanceState)
         binding = DialogConfirmOrderBinding.inflate(layoutInflater)
         setupRecyclerView()
@@ -44,7 +42,7 @@ class ConfirmOrderDialog(
     }
     private fun getTotal(): String {
         var total = 0.0
-        articles.stream().forEach(Consumer { total += it.count * it.price })
+        articles.stream().forEach { total += it.count * it.price }
         return total.toString()
     }
 

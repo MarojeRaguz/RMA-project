@@ -1,16 +1,12 @@
 package com.example.barcode.ui.restaurant_home
 
-import android.app.Dialog
 import android.os.Bundle
-import android.util.Log
-import android.view.ContextMenu
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
 import androidx.fragment.app.DialogFragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.barcode.databinding.DialogConfirmOrderBinding
 import com.example.barcode.databinding.DialogRestaurantViewOrderBinding
 import com.example.barcode.model.Order
 

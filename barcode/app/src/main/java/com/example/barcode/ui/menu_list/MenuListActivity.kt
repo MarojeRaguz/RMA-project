@@ -14,7 +14,7 @@ class MenuListActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMenuListBinding
     private lateinit var adapter: MenuAdapter
-    var barRepository: BarRepository = BarRepositoryImpl()
+    private var barRepository: BarRepository = BarRepositoryImpl()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,16 +38,16 @@ class MenuListActivity : AppCompatActivity() {
     }
 
     private fun updateData() {
-        var barId = intent.getStringExtra("barId")
+        val barId = intent.getStringExtra("barId")
         if (barId != null){
             adapter.setArticles(barRepository.getBarsArticle(barId))
         }
     }
 
     private fun orderDialogOpen() {
-        var dialog = ConfirmOrderDialog(intent.getStringExtra("tableNumber")!!.toInt(),intent.getStringExtra("barId").toString())
+        val dialog = ConfirmOrderDialog(intent.getStringExtra("tableNumber")!!.toInt(),intent.getStringExtra("barId").toString())
 
-        var articles = adapter.getArticles()
+        val articles = adapter.getArticles()
         if(!articles.isNullOrEmpty()){
             dialog.setArticles(adapter.getArticles())
             dialog.show(supportFragmentManager,"confirm order dialog")

@@ -47,9 +47,9 @@ class ScanFragment: Fragment() {
 
             decodeCallback = DecodeCallback {
                 activity.runOnUiThread{
-                    var idAndTable: List<String> = it.text.split("/")
+                    val idAndTable: List<String> = it.text.split("/")
                     Log.i("main","scanning successful ${idAndTable[0]} is id and table is ${idAndTable[1]}")
-                    var intent = Intent(context,MenuListActivity::class.java).apply {
+                    val intent = Intent(context,MenuListActivity::class.java).apply {
                         putExtra("barId",idAndTable[0])
                         putExtra("tableNumber",idAndTable[1])
                     }
@@ -97,7 +97,7 @@ class ScanFragment: Fragment() {
         when(requestCode){
             CAMERA_REQUEST_CODE -> {
                 if (grantResults.isEmpty() || grantResults[0] != PackageManager.PERMISSION_GRANTED){
-                    Toast.makeText(requireActivity(),"You need the camera permission to be able to scan barcode!",Toast.LENGTH_SHORT)
+                    Toast.makeText(requireActivity(),"You need the camera permission to be able to scan barcode!",Toast.LENGTH_SHORT).show()
                 }
             }
         }

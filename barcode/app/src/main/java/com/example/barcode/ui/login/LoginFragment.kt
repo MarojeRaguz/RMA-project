@@ -22,7 +22,7 @@ class LoginFragment: Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         auth = FirebaseAuth.getInstance()
         binding = FragmentLoginBinding.inflate(layoutInflater)
         binding.btnLogin.setOnClickListener { login() }
@@ -30,9 +30,9 @@ class LoginFragment: Fragment() {
     }
 
     private fun login() {
-        var email = binding.etEmail.text.toString()
-        var password = binding.etPassword.text.toString()
-        if (email.isNullOrEmpty() and password.isNullOrEmpty()){
+        val email = binding.etEmail.text.toString()
+        val password = binding.etPassword.text.toString()
+        if (email.isEmpty() and password.isEmpty()){
             Toast.makeText(context, "Username and password cannot be empty",
                 Toast.LENGTH_SHORT).show()
         }else{

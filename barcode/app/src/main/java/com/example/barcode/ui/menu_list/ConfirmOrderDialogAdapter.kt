@@ -37,7 +37,7 @@ class ConfirmOrderDialogAdapter: RecyclerView.Adapter<ConfirmOrderDialogAdapter.
     inner class OrderViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)  {
 
         fun bind(position: Int) {
-            var article = rvArticles[position]
+            val article = rvArticles[position]
             val binding = ItemOrderedItemBinding.bind(itemView)
             binding.tvCount.text = article.count.toString()
             binding.tvPrice.text = article.price.toString()

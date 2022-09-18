@@ -2,7 +2,6 @@ package com.example.barcode.data
 
 import com.example.barcode.model.Article
 import com.example.barcode.model.Order
-import com.example.barcode.model.OrderStatus
 
 interface OrderRepository {
 

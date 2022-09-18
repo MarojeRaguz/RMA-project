@@ -5,5 +5,4 @@ package com.example.barcode.model
         var price: Double=22.22,
         var count: Int=0
     ){
-
     }

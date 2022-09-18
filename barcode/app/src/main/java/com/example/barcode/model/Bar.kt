@@ -8,5 +8,4 @@ package com.example.barcode.model
         var address: String="",
         var articles: List<Article> = listOf()
     ){
-
     }

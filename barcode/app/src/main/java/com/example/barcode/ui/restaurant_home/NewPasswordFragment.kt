@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.example.barcode.R
 import com.example.barcode.databinding.FragmentNewPasswordBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -19,7 +20,7 @@ class NewPasswordFragment:Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         auth = FirebaseAuth.getInstance()
         binding = FragmentNewPasswordBinding.inflate(layoutInflater)
         binding.btnChangePassword.setOnClickListener { changePassword() }
@@ -27,30 +28,30 @@ class NewPasswordFragment:Fragment() {
     }
 
     private fun changePassword() {
-        var user = auth.currentUser
-        var password = binding.etNewPassword.text
-        var confirmPassword = binding.etNewPasswordConfirm.text
+        val user = auth.currentUser
+        val password = binding.etNewPassword.text
+        val confirmPassword = binding.etNewPasswordConfirm.text
         if (confirmPassword.isNullOrEmpty() || password.isNullOrEmpty()){
-            Toast.makeText(context, "Morate popuniti sva polja",
+            Toast.makeText(context, getString(R.string.password_change_all_fields_require),
                 Toast.LENGTH_SHORT).show()
         } else if (password.count() < 6){
-            Toast.makeText(context, "Lozinka mora sadržavati barem 6 znakova",
+            Toast.makeText(context, getString(R.string.password_change_at_least_6_characters),
                 Toast.LENGTH_SHORT).show()
         } else {
             if (confirmPassword.toString() == password.toString()){
 
                 user!!.updatePassword(binding.etNewPassword.text.toString()).addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-                        Toast.makeText(context, "lozinka uspješno promijenjena",
+                        Toast.makeText(context, getString(R.string.password_succsesfully_changed),
                             Toast.LENGTH_SHORT).show()
                     }
                     else {
-                        Toast.makeText(context, "Došlo je do pogreške, lozinka nije promijenjena",
+                        Toast.makeText(context, getString(R.string.password_change_error),
                             Toast.LENGTH_SHORT).show()
                     }
                 }
             }else{
-                Toast.makeText(context, "nije isto uneseno",
+                Toast.makeText(context, getString(R.string.password_change_passwords_not_equals),
                     Toast.LENGTH_SHORT).show()
             }
         }

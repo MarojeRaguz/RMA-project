@@ -15,13 +15,13 @@ import com.example.barcode.model.OrderStatus
 class ChangeOrderStatusDialog(var order: Order): DialogFragment() {
 
     lateinit var binding: DialogChangeOrderStatusBinding
-    var orderRepository: OrderRepository = OrderRepositoryImpl()
+    private var orderRepository: OrderRepository = OrderRepositoryImpl()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         binding = DialogChangeOrderStatusBinding.inflate(layoutInflater)
         if (order.status == OrderStatus.ORDERED){

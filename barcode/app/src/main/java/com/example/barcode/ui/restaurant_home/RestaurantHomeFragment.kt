@@ -1,27 +1,19 @@
 package com.example.barcode.ui.restaurant_home
 
-import android.app.Dialog
 import android.content.ContentValues
-import android.content.Context
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.barcode.data.BarRepository
 import com.example.barcode.data.BarRepositoryImpl
-import com.example.barcode.data.OrderRepository
-import com.example.barcode.data.OrderRepositoryImpl
 import com.example.barcode.databinding.FragmentRestaurantHomeBinding
 import com.example.barcode.model.Order
-import com.example.barcode.ui.menu_list.ConfirmOrderDialog
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import com.google.gson.Gson
 
 class RestaurantHomeFragment: Fragment(),OnOrderEventListener {
 
@@ -40,13 +32,13 @@ class RestaurantHomeFragment: Fragment(),OnOrderEventListener {
         binding = FragmentRestaurantHomeBinding.inflate(layoutInflater)
         binding.rvRestaurantHome.layoutManager = LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false)
         binding.rvRestaurantHome.adapter
-        orders = arrayListOf<Order>()
+        orders = arrayListOf()
         updateData()
         return binding.root
     }
 
     private fun updateData() {
-        var email = user!!.email.toString()
+        val email = user!!.email.toString()
         val barId = barRepository.getBarByBarEmail(email).id
         ref.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -69,7 +61,7 @@ class RestaurantHomeFragment: Fragment(),OnOrderEventListener {
 
     override fun onOrderSelected(order: Order?) {
         if (order != null){
-            var dialog = ViewOrderDialog(order)
+            val dialog = ViewOrderDialog(order)
             dialog.show(childFragmentManager,"view order dialog")
         }else {
             Log.d("order not found","order not found")
@@ -77,13 +69,13 @@ class RestaurantHomeFragment: Fragment(),OnOrderEventListener {
     }
 
     override fun onOrderLongPress(order: Order?): Boolean {
-        if (order != null){
-            var dialog = ChangeOrderStatusDialog(order)
+        return if (order != null){
+            val dialog = ChangeOrderStatusDialog(order)
             dialog.show(childFragmentManager,"change order status dialog")
-            return true
+            true
         }else {
             Log.d("order not found","order not found")
-            return false
+            false
         }
     }
 }
