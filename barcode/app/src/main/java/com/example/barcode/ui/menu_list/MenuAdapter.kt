@@ -40,6 +40,7 @@ class MenuAdapter: RecyclerView.Adapter<MenuAdapter.MenuViewHolder>() {
             val article = rvArticles[position]
             val binding = ItemOrderItemBinding.bind(itemView)
             binding.tvArticleName.text = article.name
+            binding.tvArticlePrice.text = article.price.toString() + "kn"
             binding.tvTotal.text = article.count.toString()
             binding.btnMinus.setOnClickListener {
                 if (article.count > 0){

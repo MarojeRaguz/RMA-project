@@ -33,7 +33,7 @@ class LoginFragment: Fragment() {
         val email = binding.etEmail.text.toString()
         val password = binding.etPassword.text.toString()
         if (email.isEmpty() and password.isEmpty()){
-            Toast.makeText(context, "Username and password cannot be empty",
+            Toast.makeText(context, "Email i lozinka moraju biti uneseni",
                 Toast.LENGTH_SHORT).show()
         }else{
             Log.d(TAG,"attempting to sign in user with email: $email")
@@ -48,7 +48,7 @@ class LoginFragment: Fragment() {
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w(TAG, "signInWithEmail:failure", task.exception)
-                    Toast.makeText(context, "Authentication failed.",
+                    Toast.makeText(context, "Prijava neuspješna",
                         Toast.LENGTH_SHORT).show()
                 }
             }

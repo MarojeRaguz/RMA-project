@@ -3,11 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="40dp"
     android:background="@color/background"
-    android:layout_marginHorizontal="10dp">
+    android:layout_marginHorizontal="5dp">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginHorizontal="10dp"
+        android:layout_marginHorizontal="5dp"
         >
         <TextView
             android:id="@+id/tv_article_name"
@@ -17,13 +17,23 @@
             android:gravity="center_vertical"
             android:text="@string/item_name"
             android:textColor="@color/white"
-            android:layout_weight="0.95"
+            android:layout_weight="0.5"
+            />
+        <TextView
+            android:id="@+id/tv_article_price"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center_vertical"
+            android:text="@string/item_name"
+            android:textColor="@color/white"
+            android:layout_weight="0.3"
             />
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:gravity="end"
-            android:layout_weight="0.5">
+            android:layout_weight="0.4">
             <ImageButton
                 android:id="@+id/btn_minus"
                 android:layout_width="25dp"

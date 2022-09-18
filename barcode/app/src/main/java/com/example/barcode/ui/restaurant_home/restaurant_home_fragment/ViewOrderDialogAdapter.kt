@@ -1,4 +1,4 @@
-package com.example.barcode.ui.restaurant_home
+package com.example.barcode.ui.restaurant_home.restaurant_home_fragment
 
 import android.view.LayoutInflater
 import android.view.View

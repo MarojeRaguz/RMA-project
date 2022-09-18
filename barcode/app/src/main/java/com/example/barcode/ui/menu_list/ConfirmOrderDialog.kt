@@ -1,5 +1,6 @@
 package com.example.barcode.ui.menu_list
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,9 @@ import com.example.barcode.data.OrderRepository
 import com.example.barcode.data.OrderRepositoryImpl
 import com.example.barcode.databinding.DialogConfirmOrderBinding
 import com.example.barcode.model.Article
+import com.example.barcode.ui.MainActivity
+import com.example.barcode.ui.restaurant_home.RestaurantHomeActivity
+import com.example.barcode.ui.welcome_screen.WelcomeScreenFragment
 
 class ConfirmOrderDialog(
     private var table: Int,
@@ -69,8 +73,11 @@ class ConfirmOrderDialog(
 
     private fun makeOrder() {
         orderRepository.makeOrder(articles,table,barId)
-        Toast.makeText(context,"narudzba je uspjesno napravljena",Toast.LENGTH_SHORT).show()
+        Toast.makeText(context,"narudžba je uspješno napravljena",Toast.LENGTH_SHORT).show()
         dismiss()
+        val intent = Intent(context, MainActivity::class.java).apply{
+        }
+        startActivity(intent)
     }
 
 

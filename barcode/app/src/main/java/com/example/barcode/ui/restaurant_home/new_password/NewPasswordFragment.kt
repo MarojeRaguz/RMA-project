@@ -1,4 +1,4 @@
-package com.example.barcode.ui.restaurant_home
+package com.example.barcode.ui.restaurant_home.new_password
 
 import android.os.Bundle
 import android.view.LayoutInflater

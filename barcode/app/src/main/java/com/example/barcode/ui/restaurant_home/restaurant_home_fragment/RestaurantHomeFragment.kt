@@ -1,4 +1,4 @@
-package com.example.barcode.ui.restaurant_home
+package com.example.barcode.ui.restaurant_home.restaurant_home_fragment
 
 import android.content.ContentValues
 import android.os.Bundle
@@ -15,7 +15,7 @@ import com.example.barcode.model.Order
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
-class RestaurantHomeFragment: Fragment(),OnOrderEventListener {
+class RestaurantHomeFragment: Fragment(), OnOrderEventListener {
 
     private lateinit var binding: FragmentRestaurantHomeBinding
     private var barRepository: BarRepository = BarRepositoryImpl()

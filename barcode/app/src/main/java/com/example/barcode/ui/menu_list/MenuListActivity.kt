@@ -19,6 +19,7 @@ class MenuListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMenuListBinding.inflate(layoutInflater)
+        binding.tvBarName.text = barRepository.getBarByBarId(intent.getStringExtra("barId")!!).name
         binding.btnOrder.setOnClickListener { orderDialogOpen() }
         setContentView(binding.root)
         setupRecyclerView()
