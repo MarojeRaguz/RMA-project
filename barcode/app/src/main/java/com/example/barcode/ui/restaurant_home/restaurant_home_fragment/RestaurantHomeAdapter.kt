@@ -8,6 +8,7 @@ import com.example.barcode.R
 import com.example.barcode.databinding.ItemOrderBinding
 
 import com.example.barcode.model.Order
+import com.example.barcode.utils.getColorResource
 
 class RestaurantHomeAdapter(private val rvOrders : ArrayList<Order>): RecyclerView.Adapter<RestaurantHomeAdapter.RestaurantHomeViewHolder>() {
 
@@ -37,10 +38,14 @@ class RestaurantHomeAdapter(private val rvOrders : ArrayList<Order>): RecyclerVi
             val binding = ItemOrderBinding.bind(itemView)
             val order = rvOrders[position]
             var total = 0.0
-            binding.tvOrderId.text = order.id
-            binding.tvTable.text = order.table.toString()
+            binding.tvOrderTime.text = "Vrijeme narudžbe:\n${order.orderTime}"
+            binding.tvTable.text = "Broj stola:\n${order.table}"
             order.articles.stream().forEach { total += it.count * it.price }
-            binding.tvTotal.text = total.toString()
+            binding.tvTotal.text = "Ukupno:\n$total kn"
+            binding.llItemOrder.setBackgroundResource(
+                binding.llItemOrder.context.resources.getColorResource(order.status)
+            )
+
         }
     }
 

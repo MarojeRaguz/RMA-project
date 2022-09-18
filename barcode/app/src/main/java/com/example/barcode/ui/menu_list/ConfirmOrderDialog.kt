@@ -73,7 +73,7 @@ class ConfirmOrderDialog(
 
     private fun makeOrder() {
         orderRepository.makeOrder(articles,table,barId)
-        Toast.makeText(context,"narudžba je uspješno napravljena",Toast.LENGTH_SHORT).show()
+        Toast.makeText(context,"narudžba je uspješno napravljena",Toast.LENGTH_LONG).show()
         dismiss()
         val intent = Intent(context, MainActivity::class.java).apply{
         }

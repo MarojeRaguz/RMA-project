@@ -9,22 +9,27 @@
     <application
         android:name=".Barcode"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo2"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/logo2"
         android:supportsRtl="true"
         android:theme="@style/Theme.BARcode">
         <activity
             android:name=".ui.MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.restaurant_home.RestaurantHomeActivity">
+        <activity
+            android:name=".ui.restaurant_home.RestaurantHomeActivity"
+            android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".ui.menu_list.MenuListActivity">
+        <activity
+            android:name=".ui.menu_list.MenuListActivity"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 

@@ -12,6 +12,7 @@ import com.example.barcode.data.BarRepository
 import com.example.barcode.data.BarRepositoryImpl
 import com.example.barcode.databinding.FragmentRestaurantHomeBinding
 import com.example.barcode.model.Order
+import com.example.barcode.model.OrderStatus
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
@@ -45,7 +46,7 @@ class RestaurantHomeFragment: Fragment(), OnOrderEventListener {
                 orders.clear()
                 for (snapshot in dataSnapshot.children){
                     val order = snapshot.getValue(Order::class.java)
-                    if (order != null && order.bar_id == barId){
+                    if (order != null && order.bar_id == barId && order.status != OrderStatus.DELETED){
                         orders.add(order)
                     }
                 }

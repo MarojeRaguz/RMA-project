@@ -3,8 +3,8 @@
     <string name="continue_as_bar">NASTAVI KAO KAFIĆ</string>
     <string name="continue_as_guest">NASTAVI KAO GOST</string>
     <string name="e_mail">e-mail</string>
-    <string name="password">password</string>
-    <string name="login">login</string>
+    <string name="password">lozinka</string>
+    <string name="login">prijavi se</string>
     <string name="barcode">BARcode</string>
     <string name="bar_name">IME BARA</string>
     <string name="order">naruči</string>

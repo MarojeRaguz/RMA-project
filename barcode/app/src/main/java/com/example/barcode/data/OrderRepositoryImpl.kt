@@ -11,7 +11,9 @@ import com.example.barcode.model.OrderStatus
 import com.google.firebase.database.*
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import java.time.LocalDate
 import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 class OrderRepositoryImpl: OrderRepository {
@@ -21,7 +23,9 @@ class OrderRepositoryImpl: OrderRepository {
     var context = Barcode.application
 
     override fun makeOrder(articles: List<Article>, table: Int, barId: String) {
-        val order = Order(UUID.randomUUID().toString(),barId,table,articles,LocalDateTime.now().toString(),OrderStatus.ORDERED)
+        var date: LocalDateTime = LocalDateTime.now()
+        var datetimeFormatter: DateTimeFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")
+        val order = Order(UUID.randomUUID().toString(),barId,table,articles,datetimeFormatter.format(date),OrderStatus.ORDERED)
         ref.child(order.id).setValue(order)
     }
 

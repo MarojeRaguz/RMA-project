@@ -2,16 +2,23 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/background">
 
-
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/background"
         android:layout_marginHorizontal="50dp"
-        android:layout_marginVertical="70dp"
-        android:orientation="vertical">
+        android:layout_marginBottom="50dp"
+        android:orientation="vertical"
+        android:layout_gravity="center">
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="240dp"
@@ -30,6 +37,7 @@
             android:layout_marginHorizontal="50dp"
             android:layout_marginBottom="30dp"
             android:hint="@string/e_mail"
+            android:textColorHint="#ACA9BB"
             android:textSize="20sp"
             android:textColor="@color/black"/>
         <EditText
@@ -41,6 +49,7 @@
             android:layout_marginHorizontal="50dp"
             android:layout_marginBottom="30dp"
             android:hint="@string/password"
+            android:textColorHint="#ACA9BB"
             android:textSize="20sp"
             android:textColor="@color/black"/>
         <Button
@@ -51,8 +60,8 @@
             android:backgroundTintMode="add"
             android:backgroundTint="@color/background2"
             android:text="@string/login"
-            android:textSize="15sp"/>
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
+            android:textSize="18sp"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
