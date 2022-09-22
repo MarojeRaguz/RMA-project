@@ -10,4 +10,5 @@
     <color name="background">#3B3B3B</color>
     <color name="background2">#AD8D42</color>
     <color name="delivered">#518071</color>
+    <color name="delete">#8A0222</color>
 </resources>

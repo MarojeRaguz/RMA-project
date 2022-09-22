@@ -6,11 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
+import com.example.barcode.R
 import com.example.barcode.data.OrderRepository
 import com.example.barcode.data.OrderRepositoryImpl
 import com.example.barcode.databinding.DialogChangeOrderStatusBinding
 import com.example.barcode.model.Order
 import com.example.barcode.model.OrderStatus
+import com.example.barcode.utils.getColorResource
 
 class ChangeOrderStatusDialog(var order: Order): DialogFragment() {
 
@@ -26,11 +28,12 @@ class ChangeOrderStatusDialog(var order: Order): DialogFragment() {
         binding = DialogChangeOrderStatusBinding.inflate(layoutInflater)
         if (order.status == OrderStatus.ORDERED){
             binding.btnChangeStatus.text = "Označi narudžbu kao dostavljenu"
+            binding.btnChangeStatus.setBackgroundColor(resources.getColor(R.color.delivered))
             binding.btnChangeStatus.setOnClickListener { changeStatus(OrderStatus.DELIVERED) }
         }else{
             binding.btnChangeStatus.text = "Obriši narudžbu"
-            binding.btnChangeStatus.setBackgroundColor(11169404)
             binding.btnChangeStatus.setOnClickListener { changeStatus(OrderStatus.DELETED) }
+
         }
         return binding.root
     }

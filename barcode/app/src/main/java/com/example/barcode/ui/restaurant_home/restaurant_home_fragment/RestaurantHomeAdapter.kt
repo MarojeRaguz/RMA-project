@@ -43,7 +43,8 @@ class RestaurantHomeAdapter(private val rvOrders : ArrayList<Order>): RecyclerVi
             order.articles.stream().forEach { total += it.count * it.price }
             binding.tvTotal.text = "Ukupno:\n$total kn"
             binding.llItemOrder.setBackgroundResource(
-                binding.llItemOrder.context.resources.getColorResource(order.status)
+                binding.llItemOrder.context.resources.getColorResource(order.status
+                )
             )
 
         }

@@ -39,8 +39,8 @@ class ConfirmOrderDialogAdapter: RecyclerView.Adapter<ConfirmOrderDialogAdapter.
         fun bind(position: Int) {
             val article = rvArticles[position]
             val binding = ItemOrderedItemBinding.bind(itemView)
-            binding.tvCount.text = article.count.toString()
-            binding.tvPrice.text = article.price.toString()
+            binding.tvCount.text = article.count.toString() + "x"
+            binding.tvPrice.text = article.price.toString() + "kn"
             binding.tvName.text = article.name
             binding.tvItemTotal.text = (article.price * article.count).toString()
         }

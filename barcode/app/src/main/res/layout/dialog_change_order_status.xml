@@ -12,9 +12,10 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         android:text="Označi narudžbu kao isporučenu"
-        android:backgroundTint="@color/background2"
-        android:textColor="@color/background"
+        android:backgroundTint="@color/delete"
+        android:textColor="@color/white"
         android:textSize="15sp"
         android:layout_marginHorizontal="10dp"
+
         />
 </androidx.constraintlayout.widget.ConstraintLayout>
